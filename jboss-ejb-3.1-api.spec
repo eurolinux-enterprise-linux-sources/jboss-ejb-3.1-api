@@ -3,7 +3,7 @@
 
 Name:             jboss-ejb-3.1-api
 Version:          1.0.2
-Release:          10%{?dist}
+Release:          7%{dist}
 Summary:          EJB 3.1 API
 Group:            Development/Libraries
 License:          CDDL or GPLv2 with exceptions
@@ -24,6 +24,7 @@ BuildRequires:    maven-install-plugin
 BuildRequires:    maven-jar-plugin
 BuildRequires:    maven-javadoc-plugin
 BuildRequires:    maven-enforcer-plugin
+BuildRequires:    maven-plugin-cobertura
 BuildRequires:    maven-dependency-plugin
 BuildRequires:    maven-ear-plugin
 
@@ -78,15 +79,6 @@ cp -rp target/site/apidocs/ $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %doc LICENSE
 
 %changelog
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.0.2-10
-- Mass rebuild 2013-12-27
-
-* Fri Dec 13 2013 Ade Lee <alee@redhat.com> 1.0.2-9
-- Fix spec file dist tag for rpmlint
-
-* Wed Nov 13 2013 Mikolaj Izdebski <mizdebsk@redhat.com> - 1.0.2-8
-- Remove unneeded BR: maven-plugin-cobertura
-
 * Thu May 9 2013 Ade Lee <alee@redhat.com> 1.0.2-7
 - Resolves #961454 - Remove unneeded maven-checkstyle-plugin BR
 
